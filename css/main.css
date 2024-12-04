@@ -1,0 +1,261 @@
+@font-face {
+    font-family: main;
+    src: url(../assets/fonts/Kantumruy_Pro/KantumruyPro-VariableFont_wght.ttf);
+}
+
+:root {
+    --tc-primary: #214AB3;
+    --tc-secondary: #428ADE;
+    --tc-accent: #FFB232;
+    --tc-tertiary: #A9E8F9;
+    --tc-bg: #FFFFFF;
+    --tc-title: #043e54;
+    --tc-subtitle: #909090;
+    --tc-text: #1d3945;
+    --tc-error: #BF0000;
+    --tc-success: #54FE7E;
+
+    --ts-section: 2.7rem;
+    --ts-title: 2rem;
+    --ts-text: 1.1rem;
+    --ts-small: .85rem;
+
+}
+
+body {
+    font-family: main;
+    background-color: var(--tc-bg);
+}
+
+
+.btn {
+
+    &.tb-rounded {
+        --tr-button: 100vmax;
+    }
+
+    &.tb-primary,
+    &.tb-secondary {
+        padding: .5rem 2.5rem;
+        font-size: calc(var(--ts-text) - .1rem);
+        font-weight: 480;
+        border-radius: calc(var(--tr-button));
+    }
+
+    &.tb-primary {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        background: linear-gradient(to right, hsl(from var(--tc-primary) h s l), hsl(from var(--tc-accent) h s l), hsl(from var(--tc-secondary) h s l));
+        color: var(--tc-bg);
+
+        &::before {
+            --tb-gap: 3px;
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: calc(100% - var(--tb-gap));
+            height: calc(100% - var(--tb-gap));
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(hsl(from var(--tc-primary) h s l), hsl(from var(--tc-primary) h s 25));
+            border-radius: inherit;
+        }
+    }
+
+    &.tb-secondary {
+        border: 2px solid hsl(from var(--tc-primary) h s l);
+        box-shadow: inset 0 0 10px 0 hsl(from var(--tc-secondary) h s l / .5);
+    }
+
+    &.tb-icon-primary,
+    &.tb-icon-secondary {
+        width: 45px;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        display: grid;
+        place-items: center;
+
+        i {
+            font-size: calc(var(--ts-text) - .3rem);
+        }
+    }
+
+    &.tb-icon-primary {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        background: linear-gradient(to right, hsl(from var(--tc-primary) h s l), hsl(from var(--tc-accent) h s l), hsl(from var(--tc-secondary) h s l));
+        color: var(--tc-bg);
+
+        &::before {
+            --tb-gap: 3px;
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: calc(100% - var(--tb-gap));
+            height: calc(100% - var(--tb-gap));
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(hsl(from var(--tc-primary) h s l), hsl(from var(--tc-primary) h s 25));
+            border-radius: inherit;
+        }
+    }
+
+    &.tb-icon-secondary {
+        box-shadow: inset 0 0 15px hsl(from var(--tc-secondary) h s l);
+    }
+}
+
+
+label.tf-input-primary {
+    display: flex;
+    align-items: center;
+    border: 2px solid hsl(from var(--tc-subtitle) h s l);
+    padding: 0 1rem;
+    transition: .2s;
+
+    i {
+        font-size: calc(var(--ts-text));
+        color: hsl(from var(--tc-primary) h s l);
+
+        &.error-indicator {
+            display: none;
+        }
+    }
+
+    .form-floating {
+        flex-grow: 1;
+
+        label {
+            
+            &::after {
+                background-color: transparent !important;
+            }
+        }
+
+
+        input {
+            border: none;
+            font-size: calc(var(--ts-text));
+            background-color: transparent;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    &:has(input:focus) {
+        border-color: hsl(from var(--tc-primary) h s l);
+    }
+
+    &.valid {
+        border-color: hsl(from var(--tc-primary) h s l);
+
+        &:has(input:not(:focus)) {
+            background-color: hsl(from var(--tc-primary) h s l);
+
+            i {
+                color: hsl(from var(--tc-tertiary) h s l);
+            }
+
+            .form-floating {
+                label {
+                    color: hsl(from var(--tc-tertiary) h s l);
+                }
+
+                input {
+                    color: hsl(from var(--tc-bg) h s l);
+                }
+            }
+        }
+    }
+
+    
+    & + span.error-text {
+        color: hsl(from var(--tc-error) h s l);
+        display: block;
+        line-height: 0;
+        overflow: hidden;
+        transition: .2s;
+        margin-top: .5rem;
+    }
+
+    &.invalid {
+        border-color: hsl(from var(--tc-error) h s l) !important;
+
+        i {
+            color: hsl(from var(--tc-error) h s l);
+
+            &.error-indicator {
+                display: block;
+            }
+        }
+
+        & + span.error-text {
+            line-height: normal;
+        }
+    }
+}
+
+
+.tf-input-secondary {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: var(--tr-button) var(--tr-button) 0 0;
+    box-shadow: 0 3px 0 0 var(--tc-primary);
+    transition: .2s;
+
+    &:focus {
+        background-color: hsl(from var(--tc-secondary) h s l / .5);
+        box-shadow: none;
+        box-shadow: 0 3px 0 0 var(--tc-primary);
+    }
+
+
+}
+
+.tf-checkbox {
+    opacity: 1;
+    position: relative;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 170%;
+        height: 170%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: .3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &::before {
+        background-color: white;
+        box-shadow: 0 0 .1rem .1rem hsl(from var(--tc-primary) h s 5 / .1);
+    }
+
+    &:checked {
+        &::after {
+            font-family: 'Bootstrap-icons';
+            content: '\f26e';
+            font-weight: 900;
+            width: 140%;
+            height: 140%;
+            background: linear-gradient(to bottom,
+                    var(--tc-primary),
+                    hsl(from var(--tc-primary) H S 10));
+            color: hsl(from var(--tc-secondary) H S 80);
+            border-radius: .2rem;
+            font-size: 95%;
+        }
+    }
+}
