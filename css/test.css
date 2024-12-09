@@ -1,3 +1,22 @@
-.test {
-    color: red;
+:root {
+    --tc-primary: #214AB3;
+    --tc-secondary: #428ADE;
+    --tc-accent: #FFB232;
+    --tc-tertiary: #A9E8F9;
+    --tc-bg: #FFFFFF;
+    --tc-title: #043e54;
+    --tc-subtitle: #909090;
+    --tc-text: #1d3945;
+    --tc-error: #BF0000;
+    --tc-success: #54FE7E;
+
+    --ts-section: 2.7rem;
+    --ts-title: 2rem;
+    --ts-text: 1.1rem;
+    --ts-small: .85rem;
 }
+
+.test-h1 {
+    color: var(--tc-accent);
+}
+

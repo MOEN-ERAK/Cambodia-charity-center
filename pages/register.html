@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>កង្កើតគណនី</title>
+    <style>
+        header {
+            #register-login {
+                display: flex !important;
+            }
+
+            #profile-avartar {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="register">
+            <section class="register-wrapper">
+                <header></header>
+                <form id="register-form">
+                    <div class="container">
+                        <div class="row g-0 justify-content-center">
+                            <div class="col-9">
+                                <div class="row g-3 form-wrapper">
+                                    <div class="col-12 text-center">
+                                        <h1 class="register-title">បង្កើតគណនី</h1>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row g-3">
+                                            <div class="col-6">
+                                                <label for="primary-input" class="tf-input-primary">
+                                                    <i class="bi bi-person-fill"></i>
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" id="primary-input"
+                                                            placeholder="ត្រកូល"
+                                                            oninput="inputRealTimeValidation(this, /^\P{Zs}+$/u)">
+                                                        <label for="floatingInput">ត្រកូល</label>
+                                                    </div>
+                                                    <i class="bi bi-exclamation-octagon-fill error-indicator"></i>
+                                                </label>
+                                                <span class="error-text">សូមបញ្ចូលត្រកូល</span>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="primary-input" class="tf-input-primary">
+                                                    <i class="bi bi-person-fill"></i>
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" id="primary-input"
+                                                            placeholder="ឈ្មោះ"
+                                                            oninput="inputRealTimeValidation(this, /^\P{Zs}+$/u)">
+                                                        <label for="floatingInput">ឈ្មោះ</label>
+                                                    </div>
+                                                    <i class="bi bi-exclamation-octagon-fill error-indicator"></i>
+                                                </label>
+                                                <span class="error-text">សូមបញ្ចូលឈ្មោះ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="primary-input" class="tf-input-primary">
+                                            <i class="bi bi-envelope-at-fill"></i>
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control" id="primary-input"
+                                                    placeholder="អ៊ីម៉ែល"
+                                                    oninput="inputRealTimeValidation(this, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)">
+                                                <label for="floatingInput">អ៊ីម៉ែល</label>
+                                            </div>
+                                            <i class="bi bi-exclamation-octagon-fill error-indicator"></i>
+                                        </label>
+                                        <span class="error-text">សូមបញ្ខូលតាមតម្រងអោយបានត្រឹមត្រូវ
+                                            email@gmail.com</span>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="primary-input" class="tf-input-primary">
+                                            <i class="bi bi-telephone-fill"></i>
+                                            <div class="form-floating">
+                                                <input type="tel" class="form-control" id="primary-input"
+                                                    placeholder="លេខទូរស័ព្ទ"
+                                                    oninput="inputRealTimeValidation(this, /^\+?[\d\s-]{1,12}$/)">
+                                                <label for="floatingInput">លេខទូរស័ព្ទ</label>
+                                            </div>
+                                            <i class="bi bi-exclamation-octagon-fill error-indicator"></i>
+                                        </label>
+                                        <span class="error-text">សូមបញ្ចូលតាមទម្រង់លេខលេខទូរស័ព្ទ +855 123 456</span>
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <div class="row g-3">
+                                            <div class="col-6">
+                                                <label for="password" class="tf-input-primary">
+                                                    <i class="bi bi-lock-fill"></i>
+                                                    <div class="form-floating">
+                                                        <input type="password" class="form-control" id="password"
+                                                            placeholder="ពាក្យសម្ងាត់"
+                                                            oninput="inputRealTimeValidation(this, /^[a-zA-Z0-9]{8,}$/)">
+                                                        <label for="floatingInput">ពាក្យសម្ងាត់</label>
+                                                    </div>
+                                                    <i class="bi bi-exclamation-octagon-fill error-indicator"></i>
+                                                </label>
+                                                <span class="error-text">ពាក្យសម្ងាត់មិនតិចជាង 8 ខ្ទង់</span>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="confirm-password" class="tf-input-primary">
+                                                    <i class="bi bi-key-fill"></i>
+                                                    <div class="form-floating">
+                                                        <input type="password" class="form-control"
+                                                            id="confirm-password" placeholder="ផ្ទៀងផ្ទាត់ពាក្យសម្ងាត់"
+                                                            oninput="inputRealTimeValidation(this, new RegExp('^' + document.getElementById('password').value.replace(/[-\\/\\^$*+?.()|[\\]{}]/g, '\\\\$&') + '$'))">
+                                                        <label for="floatingInput">ផ្ទៀងផ្ទាត់ពាក្យសម្ងាត់</label>
+                                                    </div>
+                                                    <i class="bi bi-exclamation-octagon-fill error-indicator"></i>
+                                                </label>
+                                                <span class="error-text">ពាក្យសម្ងាត់មិនផ្ទៀងផ្ទាត់</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <div class="d-flex align-items-center column-gap-1 ps-2 agreement">
+                                            <input type="checkbox" class="tf-checkbox me-2" id="text-checkbox">
+                                            <span>បានអាននិងយល់ព្រមទៅលើ</span>
+                                            <a href="#">គោលការឯកជនភាព</a>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <button type="submit" class="btn tb-primary w-100">បង្កើតគណនី</button>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+                                        <span class="login">មានគណនីហើយមែនទេ? <a href="login.html">ចូលគណនី</a></span>
+                                    </div>
+
+                                    <hr class="mb-0">
+
+                                    <div class="col-12">
+                                        <a href="#"
+                                            class="register-email d-flex align-items-center justify-content-center column-gap-2">
+                                            <span class="title">បង្កើតគណនីជាមួយគណនី Google</span>
+                                            <img src="../assets/images/icon-image/google.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <ul class="background-thumbnail">
+                <li>
+                    <ul class="thumbnail">
+                        <li><img src="../assets/images/register-thumbnail3.jpeg" alt="Thumbnail 3"></li>
+                        <li><img src="../assets/images/register-thumbnail5.jpeg" alt="Thumbnail 5"></li>
+                        <li><img src="../assets/images/register-thumbnail1.jpeg" alt="Thumbnail 1"></li>
+                        <li><img src="../assets/images/register-thumbnail6.jpeg" alt="Thumbnail 6"></li>
+                        <li><img src="../assets/images/register-thumbnail2.jpeg" alt="Thumbnail 2"></li>
+                        <li><img src="../assets/images/register-thumbnail4.jpeg" alt="Thumbnail 4"></li>
+                        <li><img src="../assets/images/register-thumbnail5.jpeg" alt="Thumbnail 5"></li>
+                        <li><img src="../assets/images/register-thumbnail3.jpeg" alt="Thumbnail 3"></li>
+                        <li><img src="../assets/images/register-thumbnail6.jpeg" alt="Thumbnail 6"></li>
+                        <li><img src="../assets/images/register-thumbnail1.jpeg" alt="Thumbnail 1"></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="thumbnail">
+                        <li><img src="../assets/images/register-thumbnail4.jpeg" alt="Thumbnail 4"></li>
+                        <li><img src="../assets/images/register-thumbnail2.jpeg" alt="Thumbnail 2"></li>
+                        <li><img src="../assets/images/register-thumbnail5.jpeg" alt="Thumbnail 5"></li>
+                        <li><img src="../assets/images/register-thumbnail1.jpeg" alt="Thumbnail 1"></li>
+                        <li><img src="../assets/images/register-thumbnail3.jpeg" alt="Thumbnail 3"></li>
+                        <li><img src="../assets/images/register-thumbnail6.jpeg" alt="Thumbnail 6"></li>
+                        <li><img src="../assets/images/register-thumbnail4.jpeg" alt="Thumbnail 4"></li>
+                        <li><img src="../assets/images/register-thumbnail2.jpeg" alt="Thumbnail 2"></li>
+                        <li><img src="../assets/images/register-thumbnail1.jpeg" alt="Thumbnail 1"></li>
+                        <li><img src="../assets/images/register-thumbnail3.jpeg" alt="Thumbnail 3"></li>
+                        <li><img src="../assets/images/register-thumbnail4.jpeg" alt="Thumbnail 4"></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="thumbnail">
+                        <li><img src="../assets/images/register-thumbnail6.jpeg" alt="Thumbnail 6"></li>
+                        <li><img src="../assets/images/register-thumbnail5.jpeg" alt="Thumbnail 5"></li>
+                        <li><img src="../assets/images/register-thumbnail4.jpeg" alt="Thumbnail 4"></li>
+                        <li><img src="../assets/images/register-thumbnail3.jpeg" alt="Thumbnail 3"></li>
+                        <li><img src="../assets/images/register-thumbnail2.jpeg" alt="Thumbnail 2"></li>
+                        <li><img src="../assets/images/register-thumbnail1.jpeg" alt="Thumbnail 1"></li>
+                        <li><img src="../assets/images/register-thumbnail6.jpeg" alt="Thumbnail 6"></li>
+                        <li><img src="../assets/images/register-thumbnail4.jpeg" alt="Thumbnail 4"></li>
+                        <li><img src="../assets/images/register-thumbnail5.jpeg" alt="Thumbnail 5"></li>
+                        <li><img src="../assets/images/register-thumbnail2.jpeg" alt="Thumbnail 2"></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="/js/main.js"></script>
+    <script src="../js/header.js"></script>
+</body>
+
+</html>

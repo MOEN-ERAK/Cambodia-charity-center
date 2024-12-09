@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>ទំព័រដើម</title>
+    <style>
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            position: fixed !important;
+            width: 100% !important;
+        }
+
+        #social-media-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(2rem, -50%);
+        }
+
+        .hero-learn-more {
+            padding-inline: .5rem !important;
+
+            & , &::before{
+                background: transparent !important;
+                background-color: transparent !important;
+                color: hsl(from var(--tc-tertiary) h s l) !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <section class="homepage-hero-banner">
+            <div class="container">
+                <div class="hero-banner">
+                    <div class="content">
+                        <div class="row justify-content-end">
+                            <div class="col-6">
+                                <div class="text">
+                                    <span class="title">
+                                        សារ:សំខាន់នៃការបរិច្ចាគ
+                                        <br>
+                                        របស់អ្នក!
+                                    </span>
+                                    <span class="sign">"</span>
+                                    <p class="short-description">
+                                        ការរួមចំណែកទឹកប្រាក់តិចតួចអាចមានអត្ថន័យធំធេងណាស់។ វាអាចជួយសង្គ្រោះជីវិត
+                                        បង្កើតឱកាសសិក្សា
+                                        និងផ្តល់អាហារដល់អ្នកដែលត្រូវការជាចាំបាច់។
+                                        ការរួមចំណែកតិចតួចទាំងនេះបង្ហាញពីចិត្តសប្បុរស
+                                        និងការចែករំលែក។ សូម្បីតែទឹកប្រាក់តិចតួចក៏អាចបង្កើតការផ្លាស់ប្តូរដ៏អស្ចារ្យបាន។
+                                    </p>
+                                    <div class="button">
+                                        <button type="button" class="btn tb-primary">បរិច្ចាគឥឡូវនេះ</button>
+                                        <button type="button" class="btn tb-secondary hero-learn-more">ស្វែងយល់បន្ថែម <i class="bi bi-arrow-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul id="social-media-wrapper" class="list-unstyled d-flex flex-column row-gap-3">
+                <li>
+                    <a href="#">
+                        <img src="/assets/images/icon-image/facebook.png" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/assets/images/icon-image/twitter.png" alt="Twitter">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/assets/images/icon-image/telegram.png" alt="Telegram">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/assets/images/icon-image/linkedin.png" alt="LinkedIn">
+                    </a>
+                </li>
+            </ul>
+
+        </section>
+        <br><br><br><br><br><br><br><br><br><br>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+</body>
+
+</html>
