@@ -20,17 +20,22 @@
             width: 100% !important;
         }
 
-        #social-media-wrapper {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translate(2rem, -50%);
+        .homepage-hero-banner {
+            #social-media-wrapper {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(2rem, -50%);
+            }
         }
+
+
 
         .hero-learn-more {
             padding-inline: .5rem !important;
 
-            & , &::before{
+            &,
+            &::before {
                 background: transparent !important;
                 background-color: transparent !important;
                 color: hsl(from var(--tc-tertiary) h s l) !important;
@@ -65,7 +70,8 @@
                                     </p>
                                     <div class="button">
                                         <button type="button" class="btn tb-primary">បរិច្ចាគឥឡូវនេះ</button>
-                                        <button type="button" class="btn tb-secondary hero-learn-more">ស្វែងយល់បន្ថែម <i class="bi bi-arrow-right"></i></button>
+                                        <button type="button" class="btn tb-secondary hero-learn-more">ស្វែងយល់បន្ថែម <i
+                                                class="bi bi-arrow-right"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -96,13 +102,98 @@
                     </a>
                 </li>
             </ul>
-
         </section>
-        <br><br><br><br><br><br><br><br><br><br>
+        <section class="homepage-website-statistics">
+            <div class="container">
+                <ul class="statistics">
+                    <li>
+                        <i class="bi bi-people-fill"></i>
+                        <span id="counter">0+</span>
+                        <span class="promp">សមាជិក</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-person-heart"></i>
+                        <span id="counter">0+</span>
+                        <span class="promp">បានទទួលជំនួយ</span>
+                    </li>
+                    <li>
+                        <i class="riel">៛</i>
+                        <span id="counter">0+</span>
+                        <span class="promp">លានរៀនបានឧបត្ថម្ភ</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-person-raised-hand"></i>
+                        <span id="counter">0+</span>
+                        <span class="promp">ក្រុមកាងាស្មាគចិត្ត</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <br><br><br><br>
     </main>
+
+    <footer></footer>
 
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+
+    <script>
+        function onScrollIncrement(element, startValue, incrementValue) {
+            let isInView = false;
+            let intervalId = null;
+            let currentValue = startValue;
+
+            function checkInView() {
+                const rect = element.getBoundingClientRect();
+                const isVisible = rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+
+                if (isVisible && !isInView) {
+                    isInView = true;
+                    startIncrement();
+                } else if (!isVisible && isInView) {
+                    isInView = false;
+                    resetIncrement();
+                }
+            }
+
+            function startIncrement() {
+                if (!intervalId) {
+                    intervalId = setInterval(() => {
+                        if (currentValue < incrementValue) {
+                            currentValue += 1;
+                            element.innerText = currentValue + '+';
+                        } else {
+                            clearInterval(intervalId);
+                            intervalId = null;
+                        }
+                    }, 100);
+                }
+            }
+
+            function resetIncrement() {
+                clearInterval(intervalId);
+                intervalId = null;
+                currentValue = startValue;
+                element.innerText = currentValue + '+';
+            }
+
+            window.addEventListener('scroll', checkInView);
+            checkInView();
+        }
+
+        // Usage example
+        var statisticsWrapper = document.querySelector('.homepage-website-statistics');
+        if (statisticsWrapper) {
+            var statistics = statisticsWrapper.querySelectorAll('#counter');
+
+            onScrollIncrement(statistics[0], 1070, 1075);
+            onScrollIncrement(statistics[1], 300, 315);
+            onScrollIncrement(statistics[2], 40, 50);
+            onScrollIncrement(statistics[3], 340, 350);
+        }
+    </script>
+
 </body>
 
 </html>

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "js/footer.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1733771763367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1733771769574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n (async () => {\r\n     try {\r\n         const response = await fetch('/pages/footer.html');\r\n         const nav = await response.text();\r\n-        const header = document.querySelector('header');\r\n+        const header = document.querySelector('footer');\r\n         if (header) {\r\n             header.innerHTML = nav;\r\n         }\r\n     } catch (error) {\r\n"
+                },
+                {
+                    "date": 1733771793470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n (async () => {\r\n     try {\r\n         const response = await fetch('/pages/footer.html');\r\n         const nav = await response.text();\r\n-        const header = document.querySelector('footer');\r\n-        if (header) {\r\n-            header.innerHTML = nav;\r\n+        const footer = document.querySelector('footer');\r\n+        if (footer) {\r\n+            footer.innerHTML = nav;\r\n         }\r\n     } catch (error) {\r\n-        console.error('Error fetching header:', error);\r\n+        console.error('Error fetching footer:', error);\r\n     }\r\n })();\r\n"
+                }
+            ],
+            "date": 1733771763367,
+            "name": "Commit-0",
+            "content": "(async () => {\r\n    try {\r\n        const response = await fetch('/pages/footer.html');\r\n        const nav = await response.text();\r\n        const header = document.querySelector('header');\r\n        if (header) {\r\n            header.innerHTML = nav;\r\n        }\r\n    } catch (error) {\r\n        console.error('Error fetching header:', error);\r\n    }\r\n})();\r\n"
+        }
+    ]
+}

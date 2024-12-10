@@ -1,0 +1,42 @@
+{
+    "sourceFile": "pages/header.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1733756946194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1733756953556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n                     </a>\r\n                 </li>\r\n             </ul>\r\n             <div id=\"register-login\">\r\n-                <a  a  class=\"btn tb-secondary\">ចូលគណនី</a >\r\n-                <a  a  class=\"btn tb-primary\">បង្កើតគណនី</a >\r\n+                <a href=\"\" class=\"btn tb-secondary\">ចូលគណនី</a>\r\n+                <a href=\"\" class=\"btn tb-primary\">បង្កើតគណនី</a>\r\n             </div>\r\n             <div id=\"profile-avartar\">\r\n                 <span class=\"name\">ក្រកូល ឈ្មោះ <i class=\"bi bi-caret-down-fill\"></i></span>\r\n                 <ul id=\"custom-dropdown\">\r\n"
+                },
+                {
+                    "date": 1733756960033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n                     </a>\r\n                 </li>\r\n             </ul>\r\n             <div id=\"register-login\">\r\n-                <a href=\"\" class=\"btn tb-secondary\">ចូលគណនី</a>\r\n-                <a href=\"\" class=\"btn tb-primary\">បង្កើតគណនី</a>\r\n+                <a href=\"\" class=\"btn tb-secondary text-de\">ចូលគណនី</a>\r\n+                <a href=\"\" class=\"btn tb-primary text-de\">បង្កើតគណនី</a>\r\n             </div>\r\n             <div id=\"profile-avartar\">\r\n                 <span class=\"name\">ក្រកូល ឈ្មោះ <i class=\"bi bi-caret-down-fill\"></i></span>\r\n                 <ul id=\"custom-dropdown\">\r\n"
+                },
+                {
+                    "date": 1733756966716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n                     </a>\r\n                 </li>\r\n             </ul>\r\n             <div id=\"register-login\">\r\n-                <a href=\"\" class=\"btn tb-secondary text-de\">ចូលគណនី</a>\r\n-                <a href=\"\" class=\"btn tb-primary text-de\">បង្កើតគណនី</a>\r\n+                <a href=\"/\" class=\"btn tb-secondary text-decoration-none\">ចូលគណនី</a>\r\n+                <a href=\"\" class=\"btn tb-primary text-decoration-none\">បង្កើតគណនី</a>\r\n             </div>\r\n             <div id=\"profile-avartar\">\r\n                 <span class=\"name\">ក្រកូល ឈ្មោះ <i class=\"bi bi-caret-down-fill\"></i></span>\r\n                 <ul id=\"custom-dropdown\">\r\n"
+                },
+                {
+                    "date": 1733756975705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                     </a>\r\n                 </li>\r\n             </ul>\r\n             <div id=\"register-login\">\r\n-                <a href=\"/\" class=\"btn tb-secondary text-decoration-none\">ចូលគណនី</a>\r\n+                <a href=\"/pages/login.html\" class=\"btn tb-secondary text-decoration-none\">ចូលគណនី</a>\r\n                 <a href=\"\" class=\"btn tb-primary text-decoration-none\">បង្កើតគណនី</a>\r\n             </div>\r\n             <div id=\"profile-avartar\">\r\n                 <span class=\"name\">ក្រកូល ឈ្មោះ <i class=\"bi bi-caret-down-fill\"></i></span>\r\n"
+                },
+                {
+                    "date": 1733756982994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n                 </li>\r\n             </ul>\r\n             <div id=\"register-login\">\r\n                 <a href=\"/pages/login.html\" class=\"btn tb-secondary text-decoration-none\">ចូលគណនី</a>\r\n-                <a href=\"\" class=\"btn tb-primary text-decoration-none\">បង្កើតគណនី</a>\r\n+                <a href=\"/assets/pa\" class=\"btn tb-primary text-decoration-none\">បង្កើតគណនី</a>\r\n             </div>\r\n             <div id=\"profile-avartar\">\r\n                 <span class=\"name\">ក្រកូល ឈ្មោះ <i class=\"bi bi-caret-down-fill\"></i></span>\r\n                 <ul id=\"custom-dropdown\">\r\n"
+                },
+                {
+                    "date": 1733756989695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n                 </li>\r\n             </ul>\r\n             <div id=\"register-login\">\r\n                 <a href=\"/pages/login.html\" class=\"btn tb-secondary text-decoration-none\">ចូលគណនី</a>\r\n-                <a href=\"/assets/pa\" class=\"btn tb-primary text-decoration-none\">បង្កើតគណនី</a>\r\n+                <a href=\"/pages/register.html\" class=\"btn tb-primary text-decoration-none\">បង្កើតគណនី</a>\r\n             </div>\r\n             <div id=\"profile-avartar\">\r\n                 <span class=\"name\">ក្រកូល ឈ្មោះ <i class=\"bi bi-caret-down-fill\"></i></span>\r\n                 <ul id=\"custom-dropdown\">\r\n"
+                }
+            ],
+            "date": 1733756946194,
+            "name": "Commit-0",
+            "content": "<nav>\r\n    <div class=\"container\">\r\n        <div class=\"wrapper\">\r\n            <div class=\"brand\">\r\n                <span>Logo</span>\r\n            </div>\r\n            <ul class=\"navbar-menu list-unstyled d-flex align-items-center\">\r\n                <li>\r\n                    <a href=\"/index.html\" class=\"active\">\r\n                        ទំព័រដើម\r\n                    </a>\r\n                </li>\r\n                <li>\r\n                    <a href=\"/index.html\">\r\n                        ទំព័រដើម\r\n                    </a>\r\n                </li>\r\n                <li>\r\n                    <a href=\"/index.html\">\r\n                        ទំព័រដើម\r\n                    </a>\r\n                </li>\r\n                <li>\r\n                    <a href=\"/index.html\">\r\n                        ទំព័រដើម\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n            <div id=\"register-login\">\r\n                <a  a  class=\"btn tb-secondary\">ចូលគណនី</a >\r\n                <a  a  class=\"btn tb-primary\">បង្កើតគណនី</a >\r\n            </div>\r\n            <div id=\"profile-avartar\">\r\n                <span class=\"name\">ក្រកូល ឈ្មោះ <i class=\"bi bi-caret-down-fill\"></i></span>\r\n                <ul id=\"custom-dropdown\">\r\n                    <li>\r\n                        <i class=\"bi bi-person-circle\"></i>\r\n                        <a href=\"#\">ទៅកាន់គណនី</a>\r\n                    </li>\r\n                    <li>\r\n                        <i class=\"bi bi-box-arrow-left\"></i>\r\n                        <a href=\"/pages/login.html\">ចេញពីគណនី</a>\r\n                    </li>\r\n                </ul>\r\n                <img src=\"/assets/images/icon-image/avatar placeholder.png\" alt=\"avartar\" class=\"avartar\">\r\n            </div>\r\n        </div>\r\n    </div>\r\n</nav>"
+        }
+    ]
+}

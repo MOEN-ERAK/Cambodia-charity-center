@@ -10,29 +10,22 @@
     <title>ចូលគណនី</title>
     <style>
         header {
-            background-color: transparent;
+            position: absolute !important;
+            width: 100%;
 
-            .wrapper {
-                justify-content: center !important;
-                padding-block: 1rem;
+            #register-login {
+                display: flex !important;
+            }
 
-                * {
-                    color: hsl(from var(--tc-bg) h s l) !important;
-                }
-
-                .brand {
-                    display: none !important;
-                }
-
-                #profile-avartar {
-                    display: none !important;
-                }
+            #profile-avartar {
+                display: none !important;
             }
         }
     </style>
 </head>
 
 <body>
+    <header></header>
     <main>
         <section class="login">
             <div class="row g-0">
@@ -58,20 +51,12 @@
                                 <span>មូលនិធិជនក្រីក្រ</span>
                                 <span>ជំនួយថវិកាដល់ កុម៉ា ជនពិការ និង ចាស់ជរាគ្មានទីពឹង​។</span>
                             </span>
-                            <div class="logo d-flex align-items-center column-gap-3">
-                                <img src="../assets/images/icon-image/education ministry.png" alt="ministy cambodia">
-                                <img src="../assets/images/icon-image/news ministry.png" alt="ministy cambodia">
-                            </div>
-                            <div class="logo d-flex align-items-center column-gap-3">
-                                <img src="../assets/images/icon-image/education ministry.png" alt="ministy cambodia">
-                                <img src="../assets/images/icon-image/news ministry.png" alt="ministy cambodia">
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="content">
-                        <header></header>
+                        <!-- <header></header> -->
                         <div class="login-form">
                             <form id="login-form">
                                 <div class="row g-0 row-gap-3">
@@ -206,5 +191,3 @@
 </body>
 
 </html>
-
-<!-- thumbnail-title -->
