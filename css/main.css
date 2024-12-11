@@ -10,14 +10,14 @@
     --tc-tertiary: #A9E8F9;
     --tc-bg: #FFFFFF;
     --tc-title: #043e54;
-    --tc-subtitle: #909090;
+    --tc-subtitle: #676767;
     --tc-text: #1d3945;
     --tc-error: #BF0000;
     --tc-success: #54FE7E;
 
-    --ts-section: clamp(2rem , 2.5dvw , 3rem);
-    --ts-title: 2rem;
-    --ts-text: clamp(.9rem , 1.1dvw , 1.3rem);
+    --ts-section: clamp(1.3rem, 2.5dvw, 3rem);
+    --ts-title: clamp(1.2rem, 1.85dvw, 2rem);
+    --ts-text: clamp(.8rem, 1.1dvw, 1.3rem);
     --ts-small: .85rem;
 }
 
@@ -277,6 +277,137 @@ label.tf-input-primary {
             border-radius: .2rem;
             font-size: 95%;
         }
+    }
+}
+
+.custom-card#charity-post-card {
+    background-color: hsl(from var(--tc-bg) h s l);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    padding: .5rem;
+
+    .card-image-thumbnail {
+        width: 100%;
+        aspect-ratio: 1.5/1;
+        overflow: hidden;
+        border-radius: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .custom-card-body {
+        padding-block: 0 1.5rem;
+        padding-inline: 1.5rem;
+        text-decoration: none;
+        display: block;
+        flex-direction: column;
+
+        .content {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            .date {
+                display: block;
+                font-size: var(--ts-small);
+                font-weight: 450;
+                color: hsl(from var(--tc-subtitle) h s l);
+            }
+
+            .title {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+                font-size: var(--ts-title);
+                line-height: 130%;
+                font-weight: 550;
+                color: hsl(from var(--tc-primary) h s 20);
+            }
+
+            .short-description {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+                font-size: var(--ts-text);
+                border-left: 5px solid hsl(from var(--tc-primary) h s l);
+                padding-left: 1rem;
+                color: hsl(from var(--tc-text) h s l);
+                padding-block: 0;
+                margin-block: 0;
+
+            }
+
+            .custom-progress {
+                --progress: 0%;
+                border-radius: 0;
+                padding: .3rem !important;
+                background-color: hsl(from var(--tc-subtitle) h s l / .1);
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                column-gap: .5rem;
+
+                &::before {
+                    content: '';
+                    width: var(--progress);
+                    height: 15px;
+                    background-color: hsl(from var(--tc-secondary) h s l);
+                    transition: 1s;
+                }
+
+                &::after {
+                    content: attr(data-progress);
+                    line-height: 0;
+                    font-size: var(--ts-small);
+                }
+            }
+        }
+
+        .button-wrapper {
+            background-color: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+
+            .goto-detail {
+                font-size: var(--ts-text);
+                text-decoration: none;
+                color: hsl(from var(--tc-accent) h s l);
+            }
+        }
+
+    }
+
+
+    &.horizontal {
+        flex-direction: row;
+
+        .card-body {
+            padding-left: 1rem;
+            padding-block: 0;
+        }
+    }
+}
+
+@keyframes progress-animation {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--progress);
     }
 }
 
@@ -977,6 +1108,7 @@ footer {
 
                 .short-description {
                     color: var(--tc-bg);
+                    font-size: var(--ts-text);
                 }
 
 
@@ -1043,6 +1175,100 @@ footer {
             .promp {
                 font-size: var(--ts-text);
                 color: var(--tc-text);
+            }
+        }
+    }
+}
+
+
+
+.homepage-urgent-charity {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    .section-text {
+        .title {
+            font-size: calc(var(--ts-section));
+            letter-spacing: -.1rem;
+            font-weight: 500;
+            color: hsl(from var(--tc-text) h s l);
+            position: relative;
+            padding-bottom: 1rem;
+            display: inline-block;
+
+            i {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translate(100% , -50%);
+                background-color: red;
+                line-height: 0;
+                font-size: calc(var(--ts-section) + 3rem);
+                color: hsl(from var(--tc-primary) h s l);
+            }
+        }
+
+        .short-description {
+            color: hsl(from var(--tc-subtitle) h s l);
+            font-size: var(--ts-text);
+        }
+
+        a {
+            text-decoration: none;
+            font-size: calc(var(--ts-text) + .2rem);
+            color: hsl(from var(--tc-accent) h s l);
+            font-weight: 450;
+        }
+    }
+
+    .urgent-charity-scroller-wrapper {
+        position: relative;
+
+        .scroll-button {
+            position: absolute;
+            height: 100%;
+            font-size: clamp(2rem, 5dvw, 5rem);
+            background-color: transparent;
+            border: none;
+            left: 0;
+            transition: .2s;
+
+            i {
+                color: hsl(from var(--tc-tertiary) h s l);
+
+            }
+
+            &#next {
+                left: 100%;
+                transform: translateX(-100%);
+
+            }
+
+            &:hover {
+                background-color: hsl(from var(--tc-tertiary) h s l / .3);
+            }
+        }
+
+        ul#urgent-charity {
+            list-style-type: none;
+            display: flex;
+            overflow-x: scroll;
+            column-gap: 3rem;
+            padding-left: clamp(1rem, 10dvw, 15rem);
+            padding-block: 4rem;
+            background: linear-gradient(to right, hsl(from var(--tc-primary) h s l), hsl(from var(--tc-primary) h s 15));
+            scroll-behavior: smooth;
+            li {
+                width: fit-content;
+
+                .custom-card#charity-post-card {
+                    width: clamp(500px, 40dvw, 700px);
+
+                    .custom-card-body {
+                        padding-block: 0;
+                        padding-inline: 1.5rem;
+                    }
+                }
             }
         }
     }
