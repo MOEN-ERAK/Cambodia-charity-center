@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../lib/bootstrap-5.3.3-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/main.css">
-    <title>ចូលគណនី</title>
+    <title>DCD | ចូលគណនី</title>
     <style>
         header {
             position: absolute !important;
@@ -105,15 +105,15 @@
                                                         <input type="checkbox" class="tf-checkbox" id="text-checkbox">
                                                         <span>ចងចាំគណនីរបសខ្ញុំ</span>
                                                     </div>
-                                                    <a href="#" class="forget-password">ភ្លេចពាក្យសម្ងាត់?</a>
+                                                    <a href="forget-password.html" class="forget-password">ភ្លេចពាក្យសម្ងាត់?</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-12">
-                                        <a href="/index.html"
-                                            class="btn tb-primary w-100 text-decoration-none">ចូលគណនី</a>
+                                        <a
+                                            class="btn tb-primary w-100 text-decoration-none" onclick="preLoaderLink('/index.html' , 2000)">ចូលគណនី</a>
                                     </div>
 
                                     <div class="col-12 text-center">
@@ -141,6 +141,7 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/pre-loader.js"></script>
     <script>
         const slider = document.querySelector('.thumbnail');
         const slides = slider.getElementsByTagName('li');
@@ -187,6 +188,7 @@
         }
 
         setInterval(autoSlide, 5000);
+
     </script>
 </body>
 

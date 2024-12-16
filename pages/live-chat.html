@@ -1,0 +1,27 @@
+<div id="live-chat-wrapper">
+    <form id="chat-box">
+        <div class="chat-header d-flex align-items-center justify-content-between">
+            <i class="bi bi-chat-left-text-fill"></i>
+            <span>សារ 24 ម៉ោង</span>
+            <button type="button" id="close-live-chat" onclick="toggleLiveChat(this)"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="chat-body">
+            <div class="screen">
+                <div class="head-chat">
+                    <div class="content">
+                        <span class="name"><i class="bi bi-person-circle"></i> CDC | សេវាបម្រើអតិថិជន</span>
+                        <p class="content">តើខ្ញំុអាចជួយអ្វីអ្នកបាន?</p>
+                    </div>
+                    <span class="time">10:30am</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <label for="chat-text">
+                <textarea id="chat-text" rows="3"></textarea>
+                <button id="upload-image"><i class="bi bi-card-image"></i></button>
+            </label>
+        </div>
+    </form>
+    <button id="toggle-live-chat"><i class="bi bi-chat-right" onclick="toggleLiveChat(this)"></i></button>
+</div>

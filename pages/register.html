@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../lib/bootstrap-5.3.3-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/main.css">
-    <title>កង្កើតគណនី</title>
+    <title>DCD | កង្កើតគណនី</title>
     <style>
         header {
             #register-login {
@@ -26,7 +26,7 @@
         <section class="register">
             <section class="register-wrapper">
                 <header></header>
-                <form id="register-form">
+                <form id="register-form" onsubmit="register()">
                     <div class="container">
                         <div class="row g-0 justify-content-center">
                             <div class="col-9">
@@ -209,6 +209,24 @@
 
     <script src="/js/main.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/pre-loader.js"></script>
+    <script src="../js/popup.js"></script>
+
+    <script>
+        function register() {
+            event.preventDefault();
+            (async () => {
+                const isLoaded = await preLoader(3000);
+                if (isLoaded) {
+                    const isClick = await PopUpOption('ការបង្កើតគណនីបានជោគជ័យ', 'សូមត្រឡប់ទៅទំព័រចូលគណនីដើម្បីចូលប្រើប្រាស់', status = true, multiOption = false);
+                    if (isClick) {
+                        window.location.href = "login.html";
+                    }
+                }
+            })();
+        }
+    </script>
+
 </body>
 
 </html>
