@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>CDC | ការបរិច្ចាគ</title>
+</head>
+
+<body>
+    <header></header>
+
+    <main>
+        <section id="custom-nav-tabs">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-6">
+                        <ul class="tab-button-wrapper">
+                            <li class="tab-border">
+                                <button type="button" class="tab active" id="poverty">
+                                    មូលនិធិជនក្រីក្រ
+                                </button>
+                            </li>
+                            <li class="tab-border">
+                                <button type="button" class="tab">
+                                    មូលនិធិករសាង
+                                </button>
+                            </li>
+                            <li class="tab-border">
+                                <button type="button" class="tab">
+                                    ការបរិច្ចាគវិទ្យាសាស្ត្រ
+                                </button>
+                            </li>
+                            <li class="tab-border blank">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <div class="seach-wrapper">
+                            <div class="tab-border blank">
+                                <div class="search-box">
+                                    <input type="text" name="" id="" class="form-control" placeholder="ស្វែករក">
+                                    <button type="button"><i class="bi bi-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="donate-sort">
+            <div class="container">
+                <ul class="sort">
+                    <li>
+                        <label for="age" class="sort-title">វ័យ</label>
+                        <select id="age">
+                            <option value="all" selected>ទាំងអស់</option>
+                            <option value="childs">កុម៉ា</option>
+                            <option value="adult">យុវវ័យ</option>
+                            <option value="elderly">មនុស្សចាស់</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="date" class="sort-title">ពេលវេលា</label>
+                        <input type="date" id="date">
+                    </li>
+                    <li>
+                        <label for="location" class="sort-title">ទីតាំង</label>
+                        <select id="location">
+                            <option value="all" selected>ទាំងអស់</option>
+                            <option value="phnom penh">ទីក្រុងភ្នំពេញ</option>
+                            <option value="banteay meanchey">បន្ទាយមានជ័យ</option>
+                            <option value="battambang">បាត់ដំបង</option>
+                            <option value="kampong cham">កំពង់ចាម</option>
+                            <option value="kampong chhnang">កំពង់ឆ្នាំង</option>
+                            <option value="kampong speu">កំពង់ស្ពឺ</option>
+                            <option value="kampong thom">កំពង់ធំ</option>
+                            <option value="kampot">កំពត</option>
+                            <option value="kandal">កណ្តាល</option>
+                            <option value="kep">កែប</option>
+                            <option value="koh kong">កោះកុង</option>
+                            <option value="kratie">ក្រចេះ</option>
+                            <option value="mondulkiri">មណ្ឌលគីរី</option>
+                            <option value="oddar meanchey">ឧត្ដរមានជ័យ</option>
+                            <option value="pursat">ពោធិ៍សាត់</option>
+                            <option value="preah vihear">ព្រះវិហារ</option>
+                            <option value="prey veng">ព្រៃវែង</option>
+                            <option value="ratanakiri">រតនគីរី</option>
+                            <option value="siem reap">សៀមរាប</option>
+                            <option value="preah sihanouk">ព្រះសីហនុ</option>
+                            <option value="stung treng">ស្ទឹងត្រែង</option>
+                            <option value="svay rieng">ស្វាយរៀង</option>
+                            <option value="takéo">តាកែវ</option>
+                            <option value="tboung khmum">ត្បូងឃ្មុំ</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="abiliy" class="sort-title">សមត្ថភាព</label>
+                        <div class="radio-wrapper">
+                            <input type="radio" name="abiliy" id="abiliy" checked>
+                            <label for="abiliy">ធម្តតា</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" name="abiliy" id="disability">
+                            <label for="disability">ពិការរភាព</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="donation-post">
+            <div class="container">
+                <div id="placeholder-wrapper">
+                    <div class="row g-5">
+                        <div class="col-4">
+                            <div class="custom-card placeholder-glow" id="charity-post-card">
+                                <div class="card-image-thumbnail placeholder">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date placeholder col-6"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <div class="custom-progress placeholder" data-progress="0%"
+                                            style="--progress: 0%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary placeholder">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail placeholder">អានបន្ត <i
+                                                class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card placeholder-glow" id="charity-post-card">
+                                <div class="card-image-thumbnail placeholder">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date placeholder col-6"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <div class="custom-progress placeholder" data-progress="0%"
+                                            style="--progress: 0%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary placeholder">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail placeholder">អានបន្ត <i
+                                                class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card placeholder-glow" id="charity-post-card">
+                                <div class="card-image-thumbnail placeholder">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date placeholder col-6"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <div class="custom-progress placeholder" data-progress="0%"
+                                            style="--progress: 0%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary placeholder">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail placeholder">អានបន្ត <i
+                                                class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card placeholder-glow" id="charity-post-card">
+                                <div class="card-image-thumbnail placeholder">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date placeholder col-6"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <div class="custom-progress placeholder" data-progress="0%"
+                                            style="--progress: 0%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary placeholder">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail placeholder">អានបន្ត <i
+                                                class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card placeholder-glow" id="charity-post-card">
+                                <div class="card-image-thumbnail placeholder">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date placeholder col-6"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <div class="custom-progress placeholder" data-progress="0%"
+                                            style="--progress: 0%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary placeholder">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail placeholder">អានបន្ត <i
+                                                class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card placeholder-glow" id="charity-post-card">
+                                <div class="card-image-thumbnail placeholder">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date placeholder col-6"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <span class="title placeholder col-12"></span>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <p class="short-description title placeholder col-12"></p>
+                                        <div class="custom-progress placeholder" data-progress="0%"
+                                            style="--progress: 0%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary placeholder">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail placeholder">អានបន្ត <i
+                                                class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-tab-content" id="poverty">
+                    <div class="row g-5">
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail1.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date">05 មិនា 2025</span>
+                                        <span class="title">គ្រួសារក្រីក្រដែលត្រូវការជំនួយក្នុងការរៀនសូត្រ</span>
+                                        <p class="short-description">
+                                            កុមារមួយក្រុមនៅភូមិឆ្ងាយកំពុងតែត្រូវការឧបត្ថម្ភដើម្បីទិញសម្ភារៈសិក្សា។</p>
+                                        <div class="custom-progress" data-progress="50%" style="--progress: 50%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail2.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date">07 មិនា 2025</span>
+                                        <span class="title">មនុស្សចាស់ជរារងការពិបាកក្នុងការរស់នៅ</span>
+                                        <p class="short-description">
+                                            មនុស្សចាស់ជាច្រើននៅតំបន់ដាច់ស្រយ៉ាលកំពុងត្រូវការអាហារនិងថវិកា។</p>
+                                        <div class="custom-progress" data-progress="40%" style="--progress: 40%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail3.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date">10 មិនា 2025</span>
+                                        <span class="title">ជួយសង្គ្រោះសត្វដែលកំពុងត្រូវបានបោះបង់</span>
+                                        <p class="short-description">
+                                            សត្វចិញ្ចឹមជាច្រើនត្រូវការការព្យាបាលនិងទីកន្លែងរស់នៅថ្មី។</p>
+                                        <div class="custom-progress" data-progress="70%" style="--progress: 70%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail4.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date">15 មិនា 2025</span>
+                                        <span class="title">ជួយសម្រួលការផ្គត់ផ្គង់ទឹកស្អាត</span>
+                                        <p class="short-description">
+                                            សហគមន៍មួយនៅជនបទត្រូវការទឹកស្អាតសម្រាប់ជីវភាពប្រចាំថ្ងៃ។</p>
+                                        <div class="custom-progress" data-progress="30%" style="--progress: 30%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail5.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date">20 មិនា 2025</span>
+                                        <span class="title">កុមារកំព្រាត្រូវការការគាំទ្រសុខភាព</span>
+                                        <p class="short-description">កុមារចំនួន
+                                            25នាក់ត្រូវការពិគ្រោះនិងការព្យាបាលជំងឺឆាប់រហ័ស។</p>
+                                        <div class="custom-progress" data-progress="80%" style="--progress: 80%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail6.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="#" class="content">
+                                        <span class="date">25 មិនា 2025</span>
+                                        <span class="title">ជួយបង្កើនភាពសុខសាន្តក្នុងមន្ទីរពេទ្យ</span>
+                                        <p class="short-description">
+                                            មន្ទីរពេទ្យមួយនៅតំបន់ដាច់ស្រយ៉ាលត្រូវការឧបករណ៍ពេទ្យថ្មីៗ។</p>
+                                        <div class="custom-progress" data-progress="90%" style="--progress: 90%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <button type="button" class="btn tb-primary">បរិច្ចាគថវិកា</button>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pagination">
+            <div class="container">
+                <ul id="pagination">
+                    <li>
+                        <button class="page">ត្រឡប់ក្រោយ</button>
+                    </li>
+                    <li>
+                        <button class="page active">1</button>
+                    </li>
+                    <li>
+                        <button class="page">2</button>
+                    </li>
+                    <li>
+                        <button class="page">3</button>
+                    </li>
+                    <li>
+                        <button class="page">ទំព័របន្ទាប់</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="/js/main.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/pre-loader.js"></script>
+    <script src="../js/popup.js"></script>
+    <script>
+        (() => {
+            togglePlaceholder();
+            setTimeout(() => {
+                togglePlaceholder();
+                document.querySelector('.custom-tab-content#poverty').classList.add('active');
+            }, 5000)
+
+        })();
+
+
+        navbarActive(1);
+
+        function togglePlaceholder() {
+            document.getElementById("placeholder-wrapper").classList.toggle('active');
+        }
+
+        document.getElementById('custom-nav-tabs').querySelectorAll('button').forEach(element => {
+            element.addEventListener('click', function toggleTabContent(e) {
+                document.getElementById('custom-nav-tabs').querySelectorAll('button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+
+                e.target.classList.add('active');
+                const activeTabId = e.target.getAttribute('id');
+
+                document.querySelectorAll('.custom-tab-content').forEach(content => {
+                    content.classList.remove('active');
+                    if (content.getAttribute('id') === activeTabId) {
+                        togglePlaceholder();
+
+                        setTimeout(() => {
+                            togglePlaceholder();
+                            content.classList.add('active');
+                        }, 1000);
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
