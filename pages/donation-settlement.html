@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>DCD | ទូទាត់ការបរិច្ចាគ</title>
+</head>
+
+<body>
+    <header></header>
+
+    <main>
+        <section class="breadcrumb">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">ទំព័រដើម</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">ការបរិច្ចាគ</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">គ្រួសារក្រីក្រដែលត្រូវការជំនួយក្នុងការរៀនសូត្រ</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">ទូទាត់ការបរិច្ចាគ</li>
+                    </ol>
+                </nav>
+        </section>
+
+        <section class="donation-settlement">
+            <div class="container">
+                <form id="donation-form">
+
+                    <fieldset>
+                        <legend>អ្នកកំបុងបរិច្ចាគទៅកាន់</legend>
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="../assets/images/login-thumbnail1.jpeg" alt="" class="thumbnail">
+                            </div>
+                            <div class="col-9">
+                                <span class="date">05 មិនា 2025</span>
+                                <h1 class="title">គ្រួសារក្រីក្រដែលត្រូវការជំនួយក្នុងការរៀនសូត្រ</h1>
+                                <p class="short-description">
+                                    គ្រួសារក្រីក្រដែលត្រូវការជំនួយក្នុងការរៀនសូត្រ
+                                    គ្រួសារក្រីក្រជាច្រើនត្រូវប្រឈមមុខនឹងបញ្ហាផ្សេងៗដែលបង្កការលំបាកក្នុងការផ្តល់ការអប់រំដល់កូនៗរបស់ពួកគេ។
+                                    បញ្ហាទូទៅរួមមាន៖ សេដ្ឋកិច្ច:
+                                    គ្រួសារដែលមានប្រាក់ចំណូលទាបមិនអាចផ្តល់ឱ្យកូនៗនូវសម្ភារៈសិក្សាដែលត្រូវការដូចជាសៀវភៅ
+                                    កុំព្យូទ័រ ឬឧបករណ៍អេឡិចត្រូនិចផ្សេងៗ។
+                                </p>
+
+                                <div class="custom-progress" data-progress="15 លានរៀល" style="--progress: 60%"></div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>សេចក្ដីណែនាំ</legend>
+                        <div class="row">
+                            <div class="col-7">
+                                <ul class="promp">
+                                    <li>
+                                        សូម Scan QR ដើម្បីធ្វើការផ្ទេប្រាក់
+                                    </li>
+                                    <li>
+                                        សូម Screenshot ដំណើការនៃការផ្ទេប្រាក់របស់អ្នកពេលជោគជ័យ
+                                    </li>
+                                    <li>
+                                        បញ្ពេញព័ត៍មានខាងក្រោមដើម្បីផ្ទៀងផ្ទាត់
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="col-2">
+                                <img src="../assets/images/qr.jpg" alt="qr" class="qr">
+                            </div>
+                            <div class="col-2">
+                                <img src="../assets/images/qr.jpg" alt="qr" class="qr">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>ព័ត៍មានផ្ទេប្រាក់</legend>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <label for="primary-input" class="tf-input-primary">
+                                            <i class="bi bi-person-fill"></i>
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="primary-input"
+                                                    placeholder="ឈ្មោះគណនី"
+                                                    oninput="inputRealTimeValidation(this, /^\P{Zs}+$/u)">
+                                                <label for="floatingInput">ត្រកូល</label>
+                                            </div>
+                                            <i class="bi bi-exclamation-octagon-fill error-indicator"></i>
+                                        </label>
+                                        <span class="error-text">សូមបញ្ចូលត្រកូល</span>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="primary-input" class="tf-input-primary">
+                                            <i class="bi bi-telephone-fill"></i>
+                                            <div class="form-floating">
+                                                <input type="tel" class="form-control" id="primary-input"
+                                                    placeholder="លេខទូរស័ព្ទ"
+                                                    oninput="inputRealTimeValidation(this, /^\+?[\d\s-]{1,12}$/)">
+                                                <label for="floatingInput">លេខទូរស័ព្ទ</label>
+                                            </div>
+                                            <i class="bi bi-exclamation-octagon-fill error-indicator"></i>
+                                        </label>
+                                        <span class="error-text">សូមបញ្ចូលតាមទម្រង់លេខលេខទូរស័ព្ទ +855 123 456</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="primary-input" class="tf-input-primary">
+                                            <i class="bi bi-telephone-fill"></i>
+                                            <div class="form-floating">
+                                                <input type="number" class="form-control" id="primary-input"
+                                                    placeholder="លេខទូរស័ព្ទ"
+                                                    oninput="inputRealTimeValidation(this, /^\d+$/)">
+                                                <label for="floatingInput">ចំនួនទឹកប្រាក់</label>
+                                            </div>
+                                            <i class="bi bi-exclamation-octagon-fill error-indicator"></i>
+                                        </label>
+                                        <span class="error-text">សូមបញ្ចូលតែជាតួលេខប៉ុណ្ណោះ</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="radio-wrapper h-100 d-flex align-items-center column-gap-2">
+                                            <input type="radio" id="primary-radio-1" name="primary-radio"
+                                                value="option1">
+                                            <label for="primary-radio-1">ប្រាក់រៀល(៛)</label>
+                                            <input type="radio" id="primary-radio-1" name="primary-radio"
+                                                value="option1" class="ms-3">
+                                            <label for="primary-radio-1">ប្រាក់ដុល្លា($)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="slip">
+                                    <img src="../assets/images/slip.jpeg" alt="placeholder">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="col-12">
+                        <div class="d-flex align-items-center column-gap-1 ps-2 agreement">
+                            <input type="checkbox" class="tf-checkbox me-2" id="text-checkbox">
+                            <span>បានអាននិងយល់ព្រមទៅលើ</span>
+                            <a href="#">គោលការឯកជនភាព</a>
+                        </div>
+                    </div>
+
+                    <button type="button" href="donation-settlement.html" class="btn tb-primary w-100" onclick="settlement()">បរិច្ចាគឥឡូវនេះ</button>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+    <script src="/js/main.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/pre-loader.js"></script>
+    <script src="../js/popup.js"></script>
+
+    <script>
+        function settlement() {
+            event.preventDefault();
+            (async () => {
+                const isLoaded = await preLoader(3000);
+                if (isLoaded) {
+                    const isClick = await PopUpOption('ការបរិច្ចាគបានជោគជ័យ', 'អ្នកអាចត្រឡប់ទៅទំព័របរិច្ចាគវិញបាន', status = true, multiOption = false);
+                    if (isClick) {
+                        window.location.href = "donate.html";
+                    }
+                }
+            })();
+        }
+    </script>
+</body>
+
+</html>

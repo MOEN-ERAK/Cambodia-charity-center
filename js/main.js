@@ -1,4 +1,6 @@
 (async () => {
+    AOS.init();
+    
     const rootElement = document.documentElement;
 
     if(localStorage.getItem('cdc-theme-mode') != null) {
@@ -14,6 +16,9 @@
     }
 })();
 
+function openDialPad(phoneNumber) {
+    window.location.href = `tel:${phoneNumber}`;
+}
 
 function toggleLiveChat(button) {
     let liveChat = document.querySelector('form#chat-box');
@@ -63,3 +68,26 @@ function inputRealTimeValidation(element, rex) {
         alert('ERROR: .tf-input-primary not found');
     }
 }
+
+
+function inputImageHandler(element) {
+    const avatar = element.closest('.input-avatar');
+
+    if (!avatar) {
+        console.warn('No .input-avatar found for the given input element.');
+        return;
+    }
+
+    const avatarImage = avatar.querySelector('.avatar');
+    const image = element.files[0];
+
+    if (image && avatarImage) {
+        avatarImage.src = URL.createObjectURL(image);
+        avatarImage.alt = image.name;
+        avatar.classList.add('active');
+    } else {
+        console.warn('Avatar image element not found or no image selected.');
+    }
+}
+
+

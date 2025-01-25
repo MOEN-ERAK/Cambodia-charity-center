@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>CDC | គណនីអ្នកប្រើប្រាស់</title>
+    <style>
+        :root {
+            --line-color: var(--tc-accent);
+            --gradient-color-start: var(--tc-secondary);
+            --grid-line-color: var(--tc-secondary);
+        }
+
+        body {
+            background-color: hsl(from var(--tc-subtitle) h s l / .15);
+        }
+
+        #custom-nav-tabs {
+            margin-top: 0;
+        }
+
+        .user-placeholder {
+            height: 50dvh;
+            display: grid;
+            place-items: center;
+
+            .loader {
+                width: 60px;
+                aspect-ratio: 1;
+                --c: no-repeat linear-gradient(#000 0 0);
+                background:
+                    var(--c) 0% 50%,
+                    var(--c) 50% 50%,
+                    var(--c) 100% 50%;
+                background-size: 20% 100%;
+                animation: l1 1s infinite linear;
+            }
+        }
+
+        @keyframes l1 {
+            0% {
+                background-size: 20% 100%, 20% 100%, 20% 100%
+            }
+
+            33% {
+                background-size: 20% 10%, 20% 100%, 20% 100%
+            }
+
+            50% {
+                background-size: 20% 100%, 20% 10%, 20% 100%
+            }
+
+            66% {
+                background-size: 20% 100%, 20% 100%, 20% 10%
+            }
+
+            100% {
+                background-size: 20% 100%, 20% 100%, 20% 100%
+            }
+        }
+
+        .tab-button-wrapper {
+            .tab-border {
+                .tab {
+                    border-right-width: 1px !important;
+                }
+
+                &:first-child {
+                    .tab {
+                        border-right-width: 0px !important;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+
+    <main>
+        <section class="user-banner">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-4 d-flex justify-content-center">
+                        <div class="input-avatar">
+                            <img src="" alt="" class="avatar">
+                            <img src="/assets/images/login-thumbnail3.jpeg" alt="placeholder" class="placeholder">
+                            <input type="file" id="avatar" class="form-control" name="image"
+                                onchange="inputImageHandler(this)" accept=".png, .jpg, .jpeg">
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <h1 class="name">ឈ្មោះ ត្រកូល</h1>
+                        <div class="email-social">
+                            <span class="email">email@gmail.com</span>
+                            <ul id="social-media-wrapper" class="list-unstyled d-flex flex-row column-gap-2 mb-0">
+                                <li>
+                                    <a href="#">
+                                        <img src="/assets/images/icon-image/facebook.png" alt="Facebook">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="/assets/images/icon-image/twitter.png" alt="Twitter">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="/assets/images/icon-image/telegram.png" alt="Telegram">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="/assets/images/icon-image/linkedin.png" alt="LinkedIn">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="user-donation-statistic">
+            <div class="container" style="background-color: var(--tc-bg);">
+                <div class="statistic">
+                    <div class="user-donation-graph">
+                        <span class="d-block mb-3">ស្ថិតិការបរិច្ចាគប្រចាំខែ</span>
+                        <div class="donation-graph-wrapper">
+                            <canvas id="donationChart"></canvas>
+                        </div>
+                        <div class="d-flex align-items-center column-gap-2">
+                            <input class="flex-grow-1" type="range" id="heightSlider" min="100" max="400" value="200"
+                                step="10">
+                            <label for="heightSlider" class="fs-6 text-subtitle-team"
+                                style="white-space: nowrap !important;">កម្ពស់តារាង</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="custom-nav-tabs">
+            <div class="container" style="background-color: var(--tc-bg);">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <ul class="tab-button-wrapper">
+                            <li class="tab-border flex-grow-1">
+                                <button type="button" class="tab w-100 active" id="portfolio">
+                                    អំពីព័ត៌មានផ្ទាល់ខ្លួន
+                                </button>
+                            </li>
+                            <li class="tab-border flex-grow-1">
+                                <button type="button" class="tab w-100" id="poverty">
+                                    ប្រវត្តិការបរិច្ចាគ
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="user-placeholder-section">
+            <div class="container" style="background-color: var(--tc-bg);">
+                <div id="placeholder-wrapper">
+                    <div class="row g-5">
+                        <div class="col-12">
+                            <div class="user-placeholder">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="user-tabs">
+            <div class="container" style="background-color: var(--tc-bg);">
+                <div class="custom-tab-content pt-3 active" id="portfolio">
+                    <ul class="portfolio" class="list-unstyled">
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-map"></i>
+                                <span>ខេត្ត កំពង់ស្ពឺ, ស្រុក ច្បាមន</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-telephone"></i>
+                                <span class="me-3">+855 123 123</span>
+                                <button type="button" class="btn" style="color: var(--tc-text-light); background-color: var(--tc-primary);" onclick="openDialPad('+85510746528')"><i class="bi bi-telephone-outbound"></i></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-backpack4"></i>
+                                <span>Software developer</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="hash-tag py-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="d-flex flex-wrap column-gap-2 row-gap-2">
+                                    <span class="badge">#ការបរិច្ចាគ</span>
+                                    <span class="badge">#ជួយសង្គមខ្មែរ</span>
+                                    <span class="badge">#សុវណ្ណភាពខ្មែរ</span>
+                                    <span class="badge">#ចែករំលែកសេចក្ដីស្រឡាញ់</span>
+                                    <span class="badge">#ជួយគ្នាខ្មែរ</span>
+                                    <span class="badge">#ទឹកចិត្តខ្មែរ</span>
+                                    <span class="badge">#ខ្មែរសាមគ្គី</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="user-photo">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <a href="#" class="py-3">មើលច្រើនទៀត <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                        <div class="user-thumbnail-wrapper">
+                            <button type="button" id="back" class="scroll-button"
+                                onclick="thumbnailScrollHandler(this)"><i
+                                    class="bi bi-chevron-compact-left"></i></button>
+                            <button type="button" id="next" class="scroll-button"
+                                onclick="thumbnailScrollHandler(this)"><i
+                                    class="bi bi-chevron-compact-right"></i></button>
+                            <ul class="user-thumbnail" id="user-thumbnail">
+                                <li>
+                                    <img src="../assets/images/register-thumbnail1.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail2.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail3.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail1.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail2.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail3.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail1.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail2.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail3.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail1.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail2.jpeg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../assets/images/register-thumbnail3.jpeg" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-tab-content pt-4" id="poverty">
+                    <div class="row g-5">
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail1.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="donation-detail.html" class="content">
+                                        <span class="date">05 មិនា 2025</span>
+                                        <span class="title">គ្រួសារក្រីក្រដែលត្រូវការជំនួយក្នុងការរៀនសូត្រ</span>
+                                        <p class="short-description">
+                                            កុមារមួយក្រុមនៅភូមិឆ្ងាយកំពុងតែត្រូវការឧបត្ថម្ភដើម្បីទិញសម្ភារៈសិក្សា។</p>
+                                        <div class="custom-progress" data-progress="50%" style="--progress: 50%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <a role="button" href="donation-settlement.html"
+                                            class="btn tb-primary">បរិច្ចាគថវិកា</a>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail2.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="donation-detail.html" class="content">
+                                        <span class="date">07 មិនា 2025</span>
+                                        <span class="title">មនុស្សចាស់ជរារងការពិបាកក្នុងការរស់នៅ</span>
+                                        <p class="short-description">
+                                            មនុស្សចាស់ជាច្រើននៅតំបន់ដាច់ស្រយ៉ាលកំពុងត្រូវការអាហារនិងថវិកា។</p>
+                                        <div class="custom-progress" data-progress="40%" style="--progress: 40%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <a role="button" href="donation-settlement.html"
+                                            class="btn tb-primary">បរិច្ចាគថវិកា</a>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail3.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="donation-detail.html" class="content">
+                                        <span class="date">10 មិនា 2025</span>
+                                        <span class="title">ជួយសង្គ្រោះសត្វដែលកំពុងត្រូវបានបោះបង់</span>
+                                        <p class="short-description">
+                                            សត្វចិញ្ចឹមជាច្រើនត្រូវការការព្យាបាលនិងទីកន្លែងរស់នៅថ្មី។</p>
+                                        <div class="custom-progress" data-progress="70%" style="--progress: 70%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <a role="button" href="donation-settlement.html"
+                                            class="btn tb-primary">បរិច្ចាគថវិកា</a>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail4.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="donation-detail.html" class="content">
+                                        <span class="date">15 មិនា 2025</span>
+                                        <span class="title">ជួយសម្រួលការផ្គត់ផ្គង់ទឹកស្អាត</span>
+                                        <p class="short-description">
+                                            សហគមន៍មួយនៅជនបទត្រូវការទឹកស្អាតសម្រាប់ជីវភាពប្រចាំថ្ងៃ។</p>
+                                        <div class="custom-progress" data-progress="30%" style="--progress: 30%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <a role="button" href="donation-settlement.html"
+                                            class="btn tb-primary">បរិច្ចាគថវិកា</a>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail5.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="donation-detail.html" class="content">
+                                        <span class="date">20 មិនា 2025</span>
+                                        <span class="title">កុមារកំព្រាត្រូវការការគាំទ្រសុខភាព</span>
+                                        <p class="short-description">កុមារចំនួន
+                                            25នាក់ត្រូវការពិគ្រោះនិងការព្យាបាលជំងឺឆាប់រហ័ស។</p>
+                                        <div class="custom-progress" data-progress="80%" style="--progress: 80%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <a role="button" href="donation-settlement.html"
+                                            class="btn tb-primary">បរិច្ចាគថវិកា</a>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="custom-card" id="charity-post-card">
+                                <div class="card-image-thumbnail">
+                                    <img src="../assets/images/register-thumbnail6.jpeg" alt="thumbnail">
+                                </div>
+                                <div class="custom-card-body">
+                                    <a href="donation-detail.html" class="content">
+                                        <span class="date">25 មិនា 2025</span>
+                                        <span class="title">ជួយបង្កើនភាពសុខសាន្តក្នុងមន្ទីរពេទ្យ</span>
+                                        <p class="short-description">
+                                            មន្ទីរពេទ្យមួយនៅតំបន់ដាច់ស្រយ៉ាលត្រូវការឧបករណ៍ពេទ្យថ្មីៗ។</p>
+                                        <div class="custom-progress" data-progress="90%" style="--progress: 90%"></div>
+                                    </a>
+                                    <div class="button-wrapper">
+                                        <a role="button" href="donation-settlement.html"
+                                            class="btn tb-primary">បរិច្ចាគថវិកា</a>
+                                        <a href="#" class="goto-detail">អានបន្ត <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="blank">
+        <div class="container" style="background-color: var(--tc-bg);">
+            <div style="height: 1rem;"></div>
+        </div>
+    </section>
+    <footer></footer>
+
+    <script src="/js/main.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/pre-loader.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/nav-tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('donationChart').getContext('2d');
+        const chartContainer = document.querySelector('.donation-graph-wrapper');
+        const heightSlider = document.getElementById('heightSlider');
+
+        // Function to update the chart's gradient and colors
+        function updateChartColors() {
+            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, getComputedStyle(document.documentElement).getPropertyValue('--gradient-color-start').trim());
+            gradient.addColorStop(1, getComputedStyle(document.documentElement).getPropertyValue('--gradient-color-end').trim());
+            const gridLineColor = getComputedStyle(document.documentElement).getPropertyValue('--grid-line-color').trim();
+            const xAxisLabelColor = getComputedStyle(document.documentElement).getPropertyValue('--x-axis-label-color').trim();
+            const yAxisLabelColor = getComputedStyle(document.documentElement).getPropertyValue('--y-axis-label-color').trim();
+
+            donationChart.data.datasets[0].backgroundColor = gradient;
+            donationChart.data.datasets[0].borderColor = getComputedStyle(document.documentElement).getPropertyValue('--line-color').trim();
+            donationChart.options.scales.y.grid.color = gridLineColor;
+            donationChart.options.scales.y.ticks.color = yAxisLabelColor; // Update y-axis label color
+            donationChart.options.scales.x.ticks.color = xAxisLabelColor;
+
+            donationChart.update();
+        }
+
+        // Initial chart configuration
+        const donationData = {
+            labels: ['មករា', 'កុម្ភៈ', 'មីនា', 'មេសា', 'ឧសភា', 'មិថុនា', 'កក្កដា', 'សីហា', 'កញ្ញា', 'តុលា', 'វិច្ឆិកា', 'ធ្នូ'],
+            datasets: [{
+                label: 'ចំនួនប្រាក់ប្រចាំខែ',
+                data: [25, 40, 35, 50, 45, 60, 75, 55, 70, 65, 80, 95],
+                borderColor: getComputedStyle(document.documentElement).getPropertyValue('--line-color').trim(),
+                backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--gradient-color-start').trim(), // Initial color
+                fill: true,
+                tension: 0.1,
+                borderWidth: 1
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: donationData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            display: true,
+                            color: getComputedStyle(document.documentElement).getPropertyValue('--grid-line-color').trim(),
+                            lineWidth: 1
+                        },
+                        ticks: {
+                            callback: function (value) {
+                                return '$' + value;
+                            },
+                            color: getComputedStyle(document.documentElement).getPropertyValue('--y-axis-label-color').trim(), // Use y-axis label color
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: getComputedStyle(document.documentElement).getPropertyValue('--x-axis-label-color').trim(), // Use x-axis label color
+                        }
+                    }
+                }
+            }
+        };
+
+        const donationChart = new Chart(ctx, config);
+
+        // Update chart when height slider is adjusted
+        heightSlider.addEventListener('input', (event) => {
+            const newHeight = event.target.value + 'px';
+            chartContainer.style.height = newHeight;
+            donationChart.resize();
+        });
+
+
+
+        function thumbnailScrollHandler(e) {
+            const scrollContainer = document.getElementById('user-thumbnail');
+            const scrollAmount = 500;
+
+            if (e.id === 'next') {
+                scrollContainer.scrollLeft += scrollAmount;
+            } else if (e.id === 'back') {
+                scrollContainer.scrollLeft -= scrollAmount;
+            }
+
+            setTimeout(() => {
+                const isAtStart = scrollContainer.scrollLeft === 0;
+                const isAtEnd = scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth;
+
+                document.getElementById('back').disabled = isAtStart;
+                document.getElementById('next').disabled = isAtEnd;
+            }, 100);
+        }
+
+    </script>
+</body>
+
+</html>
